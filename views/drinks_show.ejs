@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+body{
+    color: rgb(252, 152, 113);
+    background-color: rgba(144, 238, 144, 0.757);
+}
+ul {
+    text-transform: capitalize;
+}
+</style>
+<body>
+    <h1>At Foo Bar</h1>
+    <h2><%=drinks.name %></h2>
+        <img src=<%=drinks.image %>.jpg 
+        <h3><%=drinks.price %></h3>
+    <ul>
+            
+            <% for(let i=0; i < drinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%=i%>"><%=allDrinks[i].name %></a>
+            </li>
+        <% } %>
+        </ul>
+        <a href="/drinks/">Let's keep perusing</a>
+</body>
+</html>

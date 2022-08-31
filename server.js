@@ -25,11 +25,11 @@ app.get("/drinks", (req, res) => {
 
   //
   //add a new get route for drink/:id
-app.get("/drinks/:id",(req,res)=>{
-    res.send(req.params.id)
-})
-//   app.get("/drinks/:id", (req,res)=>{
-//     res.render("drinks_show.ejs", {
-//       drink: drinks[req.params.id],
-//     })
+// app.get("/drinks/:id",(req,res)=>{
+//     res.send(req.params.id)
 // })
+  app.get("/drinks/:id", (req,res)=>{
+    res.render("drinks_show.ejs", {
+      drinks: drinks[req.params.id],
+    })
+})
