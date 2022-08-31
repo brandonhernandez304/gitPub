@@ -33,3 +33,20 @@ app.get("/drinks", (req, res) => {
       drinks: drinks[req.params.id],
     })
 })
+
+//FOOD
+//SAME THING DIFFERENT STUFF
+//define food
+const food = require("./models/food")
+//routes
+app.get("/food/", (req, res) => {
+    res.render("food_index.ejs", {
+      allFood: food,
+    })
+  })
+
+  app.get("/food/:id", (req,res)=>{
+    res.render("food_show.ejs", {
+      food: food[req.params.id],
+    })
+})
