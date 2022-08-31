@@ -17,15 +17,19 @@ app.get("/",(req,res)=>{
 // app.get("/drinks/",(req,res)=>{
 //     res.send(drinks)
 // })
-app.get("/drinks", (request, response) => {
-    response.render("drinks_index.ejs", {
+app.get("/drinks", (req, res) => {
+    res.render("drinks_index.ejs", {
       allDrinks: drinks,
     })
   })
 
   //
-  app.get("/drinks/:indexOfDrinksArray", (req,res)=>{
-    res.render("drinks_show.ejs", {
-      drink: drinks[req.params.indexOfDrinksArray],
-    })
+  //add a new get route for drink/:id
+app.get("/drinks/:id",(req,res)=>{
+    res.send(req.params.id)
 })
+//   app.get("/drinks/:id", (req,res)=>{
+//     res.render("drinks_show.ejs", {
+//       drink: drinks[req.params.id],
+//     })
+// })
